@@ -41,7 +41,6 @@ class PortfoliosController < ApplicationController
     @portfolio_item.destroy
     respond_to do |format|
       format.html { redirect_to portfolios_path, notice: 'Portfolio Item was deleted.' }
-      format.json { head :no_content }
     end
   end
 
@@ -51,8 +50,9 @@ class PortfoliosController < ApplicationController
     def set_portfolio
       @portfolio_item = Portfolio.find(params[:id])
     end
-  def portfolio_params
-    params.require(:portfolio).permit(:title, :subtitle, :body)
-  end
+
+    def portfolio_params
+      params.require(:portfolio).permit(:title, :subtitle, :body)
+    end
 
 end
