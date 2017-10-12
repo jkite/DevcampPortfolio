@@ -1,0 +1,9 @@
+<%= image_tag @portfolio_item.main_image unless @portfolio_item.main_image.nil? %>
+
+<h1><%= @portfolio_item.title %></h1>
+
+<em><%= @portfolio_item.title %></em>
+
+<p><%= @portfolio_item.body %></p>
+
+<p><%= link_to "Delete", @portfolio_item.destroy %></p>
